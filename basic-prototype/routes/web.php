@@ -21,7 +21,6 @@ Route::get('/', function () {
 });
 
 
-
 Route::get('/test', function () {
     return view('test');
 });
@@ -31,10 +30,8 @@ Route::post('insert', [crudController::class, 'insert'])->name('insert');
 Route::get('/test', [crudController::class, 'show']);
 Route::get('delete/{id}',[crudController::class, 'deletePromo']);
 
-
 Route::get('edit/{id}', [crudController::class, 'edit_promotion']); 
 Route::post('update/{id}', [crudController::class, 'update']);
-
 // Route::get("delete/{id}", [crudController::class, 'delete']);
 Route::get('delete/{id}', [crudController::class, 'delete']);
 // Route::delete('delete/{id}',array('test' => 'crudController@destroy', 'as' => 'test'));
@@ -43,10 +40,6 @@ Route::get('search/{searchResult}', [crudController::class, 'search']);
 
 
 // ----------------------------------end of promotions-------------------
-
-
-
-
 
 
 //-----------------------------------start of apprentices --------------------------------
@@ -66,8 +59,23 @@ Route::get('edit/delete/{id}',[apprenticesController::class, 'delete']);
 // ----------------------------------start of briefs-------------------
 
 Route::get('addBrief', [briefController::class, 'viewBrief']);
+Route::get('allbriefs', [briefController::class, 'allbriefs']);
 Route::post('addBrief', [briefController::class, 'addBrief']);
-Route::get('showBrief', [briefController::class, 'showBrief']);
+Route::get('showBrief', [briefController::class, 'showBriefs']);
+
+Route::get('editBrief/{id}', [briefController::class, 'editBrief']);
+Route::get('updateBrief/{id}', [briefController::class, 'viewUpd']);
+Route::post('/editBrief/{id}/updateBrief', [briefController::class, 'updateBrief']);
+Route::get('/showBrief/{id}',[briefController::class, 'deleteBrief']);
 
 
 // ----------------------------------end of brief-------------------
+
+
+
+// ----------------------------------start of task-------------------
+Route::get("addTask/{id}", [Task_management::class, '']);
+Route::post("/", [Task_management::class, '']);
+
+
+// ----------------------------------end of task-------------------
