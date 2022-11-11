@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,8 +8,9 @@
     <link rel="stylesheet" href="">
     <title>Document</title>
 </head>
+
 <body>
-<h2>edit Brief</h2><br><br>
+    <h2>edit Brief</h2><br><br>
 
     @foreach($brief as $ass)
     <form action="{{$ass->id}}/updateBrief" method="POST">
@@ -20,15 +22,56 @@
         <br><br>
         <input type="submit" id="inpbtn">
     </form>
+    <br><br>
+    <a href="/addTask/{{$ass->id}}"><button id="add">Add task</button></a>
     @endforeach
+    <br>
+    <br><br>
+    <br><br>
+    <h2>Show Tasks</h2><br><br>
+    <br>
+    <h2>tasks</h2>
+    <div id="paragraph">
+
+        <table>
+            <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>start date</th>
+                <th>end date</th>
+                <th>description</th>
+                <th>Action</th>
+            </thead>
+            <tbody>
+                @foreach ($tasks as $value)
+                <tr>
+                    <td>{{$value->id}}</td>
+                    <td>{{$value->name}} </td>
+                    <td>{{$value->start_date}} </td>
+                    <td>{{$value->end_date}} </td>
+                    <td>{{$value->description}} </td>
+
+                    <td>
+                        <button class="btn1"><a href="/editTask/{{$value->id}}" class="btn1">Edit</a></button>
+                        <button class="btn2"><a href="/deleteTask/{{$value->id}}" class="btn2">Delete</a></button>
+                    </td>
+
+                </tr>
+                @endforeach
+
+            </tbody>
+        </table>
+        
+    </div>
     <br>
 
     <br>
-     
+
     <input type="text" id="searchbrief" placeholder="Search brief">
 
 
     <script src=""></script>
 
 </body>
+
 </html>

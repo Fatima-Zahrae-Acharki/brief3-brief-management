@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\brief;
+use App\Models\task;
 use Illuminate\Http\Request;
 
 class briefController extends Controller
@@ -34,7 +35,8 @@ class briefController extends Controller
 
     public function editBrief($id){
         $brief = brief::Where('id', $id)->get();
-        return view('updateBrief',compact('brief'));
+        $tasks = task::Where('id_briefs', $id)->get();
+        return view('updateBrief',compact('brief', 'tasks'));
     }
 
     public function viewUpd(){

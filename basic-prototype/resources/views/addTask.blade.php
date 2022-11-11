@@ -9,12 +9,13 @@
 </head>
 <body>
 <h2>Add Task</h2><br><br>
-    <form action="{{'addTask'}}" method="POST">
+    <form action='/addtask'method="POST">
         @csrf
-        <input type="text" name="bName" placeholder=" Task name " id="inp">
+        <input type="text" name="tName" placeholder=" Task name " id="inp">
         <input type="date" name="start_date" placeholder=" Start date " id="inp">
         <input type="date" name="end_date" placeholder=" End date " id="inp">
         <input type="text" name="description" placeholder=" Task description " id="inp">
+        <input type="hidden" value="{{$id}}" name="id_briefs">
         <input type="submit" value="ADD" id="inpbtn">
     </form>
     <br>

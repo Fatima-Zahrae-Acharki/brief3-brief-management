@@ -3,6 +3,7 @@
 use App\Http\Controllers\apprenticesController;
 use App\Http\Controllers\briefController;
 use App\Http\Controllers\crudController;
+use App\Http\Controllers\taskController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -74,8 +75,15 @@ Route::get('/showBrief/{id}',[briefController::class, 'deleteBrief']);
 
 
 // ----------------------------------start of task-------------------
-Route::get("addTask/{id}", [Task_management::class, '']);
-Route::post("/", [Task_management::class, '']);
+Route::get('addTask/{id}', [taskController::class, 'viewTask']);
+Route::get('allTasks', [taskController::class, 'allTasks']);
+Route::post('/addtask', [taskController::class, 'addTask']);
+Route::get('showTasks', [taskController::class, 'showTasks']);
+
+Route::get('editTask/{id}', [taskController::class, 'editTask']);
+Route::get('updateTask/{id}', [taskController::class, 'viewUpdt']);
+Route::post('/updateTask/{id}', [taskController::class, 'updateTask']);
+Route::get('/deleteTask/{id}',[taskController::class, 'deleteTask']);
 
 
 // ----------------------------------end of task-------------------

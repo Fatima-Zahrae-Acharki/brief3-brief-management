@@ -27,8 +27,8 @@ return new class extends Migration
             $table->date("start_date");
             $table->date("end_date");
             $table->string("description");
-            $table->unsignedBigInteger('brief_id'); //serve as the key which u'll reference the id of briefs(foreign)
-            $table->foreign('brief_id')->references('id')->on('briefs')->onDelete('cascade');
+            $table->unsignedBigInteger('id_briefs'); //serve as the key which u'll reference the id of briefs(foreign)
+            $table->foreign('id_briefs')->references('id')->on('briefs')->onDelete('cascade');
             $table->timestamps();
         });
     }
