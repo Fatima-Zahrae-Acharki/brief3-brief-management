@@ -27,7 +27,6 @@
     @endforeach
     <br>
     <br><br>
-    <br><br>
     <h2>Show Tasks</h2><br><br>
     <br>
     <h2>tasks</h2>
