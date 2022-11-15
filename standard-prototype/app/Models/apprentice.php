@@ -15,6 +15,6 @@ class apprentice extends Model
     
     public function assignedBrief()
     {
-        return $this->belongsToMany(brief::class);
+        return $this->belongsToMany(brief::class, 'apprentice_brief'  , 'apprentice_id' , 'id_briefs');
     }
 }

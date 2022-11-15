@@ -66,7 +66,7 @@ class briefController extends Controller
     {
         $data = apprentice::all();
         $briefId = $id;
-        return view("briefAssignement", compact('data', 'briefId'));
+        return view('briefAssignement', compact('data', 'briefId'));
     }
     public function attachBrief($briefId, $id)
     {

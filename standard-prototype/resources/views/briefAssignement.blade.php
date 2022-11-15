@@ -1,6 +1,5 @@
-<link rel="stylesheet" href="/app.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+<link rel="stylesheet" href="">
+<link rel="stylesheet" href="">
 <link rel="stylesheet" href="">
 
 
@@ -14,7 +13,7 @@
 <table class=""id="apprenant">
     <thead>
         <tr>
-            <th >First name</th>
+            <th>First name</th>
             <th>Last name</th>
             <th>Action</th>               
         </tr>
@@ -26,10 +25,9 @@
         <tr>
             <td >{{$value->first_name}}</td>
             <td >{{$value->last_name}}</td>
-            
             <td>
-                <a href="{{$briefId}}/Attach/{{$value->id}}"><button class="">Attach</button></a>
-                <a href="{{$briefId}}/Detach/{{$value->id}}"><button class="">Detach</button></a>
+                <button class=""><a href="{{$briefId}}/Attach/{{$value->id}}">Attach</a></button>
+                <button class=""><a href="{{$briefId}}/Detach/{{$value->id}}">Detach</a></button>
             </td>
         </tr>
         

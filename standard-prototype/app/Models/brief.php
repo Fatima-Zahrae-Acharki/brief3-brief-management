@@ -13,7 +13,7 @@ class brief extends Model
     }
     public function targetApprentice()
     {
-        return $this->belongsToMany(apprentice::class);
+        return $this->belongsToMany(apprentice::class ,'apprentice_brief' , 'apprentice_id' , 'id_briefs' );
     }
 }
 
